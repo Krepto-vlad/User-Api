@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
+    "start": "npm run build && node ./dist/server.js",
+    "start:dev": "ts-node server.ts",
+    "lint": "eslint src --ext .ts",
+    "compile": "tsc --project ./src/tsconfig.json",
+    "build:clean": "rm -r ./dist && mkdir ./dist",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -20,6 +26,11 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.10"
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "^22.10.10",
+    "@types/pg": "^8.11.11"
   }
 }
