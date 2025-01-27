@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.get("/", authenticateToken, async (req: Request, res: Response) => {
   try {
-    const result = await pool.query(
-      "SELECT id, name, email, status, last_login AS \"lastLogin\" FROM users ORDER BY last_login DESC"
+      const result = await pool.query(
+      "SELECT id, name, surname, email, status, last_login AS \"lastLogin\" FROM users ORDER BY last_login DESC"
     );
 
     res.json(result.rows);
